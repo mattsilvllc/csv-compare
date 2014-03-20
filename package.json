@@ -1,0 +1,17 @@
+{
+  "name": "compare-api",
+  "version": "0.0.1",
+  "private": true,
+  "scripts": {
+    "start": "node app.js"
+  },
+  "dependencies": {
+    "express": "3.5.0",
+    "jade": "*",
+    "multer": "0.0.5",
+    "async": "~0.2.10",
+    "csv-parse": "0.0.0",
+    "csv-string": "~2.1.1",
+    "underscore": "~1.6.0"
+  }
+}
