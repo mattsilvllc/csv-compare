@@ -15,7 +15,14 @@ app.set('view engine', 'jade');
 app.use(express.logger('dev'));
 app.use(express.json());
 app.use(express.urlencoded());
-app.use(multer({ dest: './public/uploads/' }));
+
+app.use(multer({
+  dest: './public/uploads/',
+  limits: {
+    files: 2
+  }
+}));
+
 app.use(express.methodOverride());
 app.use(app.router);
 app.use(express.static(path.join(__dirname, 'public')));

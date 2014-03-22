@@ -12,14 +12,11 @@ exports.compare = function (req, res) {
       cb(null, csv.parse(data));
     });
   }, function (error, data) {
-    var file1 = data[0].slice(1),
-        file2 = data[1].slice(1),
+    var file1 = _.sortBy(data[0].slice(1), function (d) { return d[0]; }),
+        file2 = _.sortBy(data[1].slice(1), function (d) { return d[0]; }),
         header1 = data[0][0],
         header2 = data[1][0],
         result = [];
-
-    file1 = _.sortBy(file1, function (d) { return d[0]; });
-    file2 = _.sortBy(file2, function (d) { return d[0]; });
 
     _.each(file1, function (row, row_ind) {
       var no_match = false;
