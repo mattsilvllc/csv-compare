@@ -21,7 +21,7 @@ exports.compare = function (req, res) {
     _.each(file1, function (row, row_ind) {
       var no_match = false;
       _.each(row, function (col, col_ind) {
-        if (col !== file2[row_ind][col_ind]) {
+        if (file2[row_ind] && col !== file2[row_ind][col_ind]) {
           no_match = true;
           row[col_ind] = '';
           return;
