@@ -6,3 +6,25 @@ body {
 a {
   color: #00B7FF;
 }
+
+#examples {
+  margin-top: 10%;
+}
+
+#wrapper h1 {
+  margin-bottom: 5%;
+}
+
+#examples {
+  margin-bottom: 2%;
+}
+
+#examples .example {
+  margin-right: 15px;
+  margin-top: 15px;
+  display: inline-block;
+}
+
+#examples .example a {
+  color: #d9534f;
+}

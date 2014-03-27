@@ -1,9 +1,20 @@
 extends layout
 
 block content
-  h1 Welcome to compare api
-  form(action="/compare", method="post", enctype="multipart/form-data")
-    input(type="file", name="file1")
-    input(type="file", name="file2")
-    input(type="submit", value="compare")
+  .container#wrapper
+    h1 Welcome to compare api
+    form.row(action="/compare", method="post", enctype="multipart/form-data")
+      .col-xs-3
+        input(type="file", name="file1")
+      .col-xs-3
+        input(type="file", name="file2")
+      .col-xs-6
+        input.btn.btn-xs.btn-danger(type="submit", value="compare")
 
+    
+    #examples
+      span.show Download Demo CSVs:
+      span.example
+        a(href="/uploads/example1.csv") Example CSV1
+      span.example
+        a(href="/uploads/example2.csv") Example CSV2
