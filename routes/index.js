@@ -9,7 +9,8 @@ exports.compare = function (req, res) {
   async.map(files, function (path, cb) {
     fs.readFile(path, 'utf8', function (error, data) {
       fs.unlink(path);
-      cb(null, csv.parse(data));
+      data = data.split(/[\r\n]/).map(function (e) { return e.split(',')});
+      cb(null, data);
     });
   }, function (error, data) {
     var file1 = _.sortBy(data[0].slice(1), function (d) { return d[0]; }),
