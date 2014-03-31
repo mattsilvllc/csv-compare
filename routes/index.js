@@ -9,7 +9,11 @@ exports.compare = function (req, res) {
   async.map(files, function (path, cb) {
     fs.readFile(path, 'utf8', function (error, data) {
       fs.unlink(path);
-      data = data.split(/[\r\n]/).map(function (e) { return e.split(',')});
+      data = data.trim()
+        .split(/[\r\n]/)
+        .filter(function (e) { return e && e.trim().length > 0;})
+        .map(function (e) { return e.trim().split(',')});
+
       cb(null, data);
     });
   }, function (error, data) {
